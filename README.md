@@ -36,3 +36,9 @@ git clone https://github.com/juliettegodyere/Cook4Me.git
 # Install dependencies
 cd Cook4Me
 yarn install # or npm install
+
+
+- [Architecture Overview](docs/architecture.md)
+- [API Documentation](docs/api.md)
+- [Database Schema](docs/database-schema.md)
+- [Setup Guide](docs/setup-guide.md)
