@@ -1,0 +1,1 @@
+docs/api.md → endpoints, request/response examples.

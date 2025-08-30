@@ -1,0 +1,1 @@
+docs/setup-guide.md → longer installation steps if the README only covers basics.

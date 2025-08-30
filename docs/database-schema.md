@@ -1,0 +1,1 @@
+docs/database-schema.md → the DB tables, relationships, ERD diagrams.

@@ -1,0 +1,1 @@
+#docs/architecture.md → this is where the High-Level App Structure (Expo frontend, Spring Boot backend, DB, etc.) with diagrams if possible.
