@@ -79,7 +79,7 @@ git add .
 git commit -m "feat: add authentication flow to frontend"
 git push origin feature/my-feature
 ```
-[Use Conventional Commits:] (https://www.conventionalcommits.org/en/v1.0.0/)
+[Use Conventional Commits:](https://www.conventionalcommits.org/en/v1.0.0/)
 
 - feat: → new feature
 - fix: → bug fix
