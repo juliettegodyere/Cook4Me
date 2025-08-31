@@ -45,26 +45,53 @@ This project follows a modular full-stack architecture with clear separation of 
 ## System Diagram
 
 ```mermaid
-flowchart TD
+flowchart TB
+    %% Frontend
     subgraph Frontend["Frontend - Expo (React Native + TypeScript)"]
-        UI[UI Components]
-        SM[State Management]
-        API[API Calls]
+        UI["UI Components"]
+        SM["State Management"]
+        API["API Calls to Backend"]
     end
 
+    %% Backend
     subgraph Backend["Backend - Spring Boot"]
-        AUTH["Auth Layer (JWT/OAuth2)"]
-        BL["Business Logic"]
+        AUTH["Authentication & Authorization (JWT/OAuth2)"]
+        BL["Business Logic (Cooks, Orders, Reviews, Locations)"]
         REST["REST Controllers"]
     end
 
+    %% Database
     subgraph Database["Database - PostgreSQL/MySQL"]
-        Tables[(Users, Cooks, Meals, Orders, Locations)]
+        Users[(Users)]
+        Cooks[(Cooks)]
+        Meals[(Meals)]
+        Orders[(Orders)]
+        Reviews[(Reviews)]
+        Locations[(Locations)]
+        Payments[(Payment History)]
     end
 
+    %% External Services
+    subgraph External["External Services"]
+        Maps["Maps / Geolocation API"]
+        PaymentAPI["Payment Gateway"]
+        Push["Push Notification Service"]
+    end
+
+    %% Connections
     UI --> API --> REST
-    REST --> BL --> Tables
+    REST --> BL --> Users
+    REST --> BL --> Cooks
+    REST --> BL --> Meals
+    REST --> BL --> Orders
+    REST --> BL --> Reviews
+    REST --> BL --> Locations
+    REST --> BL --> Payments
     AUTH --> REST
+    BL --> Maps
+    BL --> PaymentAPI
+    BL --> Push
+    Push --> UI
 ```
 
 
