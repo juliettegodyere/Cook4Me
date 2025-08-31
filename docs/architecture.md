@@ -53,9 +53,9 @@ flowchart TD
     end
 
     subgraph Backend["Backend - Spring Boot"]
-        AUTH[Auth Layer (JWT/OAuth2)]
-        BL[Business Logic]
-        REST[REST Controllers]
+        AUTH["Auth Layer (JWT/OAuth2)"]
+        BL["Business Logic"]
+        REST["REST Controllers"]
     end
 
     subgraph Database["Database - PostgreSQL/MySQL"]
