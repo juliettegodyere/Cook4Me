@@ -44,6 +44,7 @@ This project follows a modular full-stack architecture with clear separation of 
 
 ## System Diagram
 
+```mermaid
 flowchart TD
     subgraph Frontend [Frontend - Expo (React Native + TypeScript)]
         UI[UI Components]
@@ -64,6 +65,8 @@ flowchart TD
     UI --> API --> REST
     REST --> BL --> Tables
     AUTH --> REST
+```
+
 
 
 
