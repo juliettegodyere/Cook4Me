@@ -46,19 +46,19 @@ This project follows a modular full-stack architecture with clear separation of 
 
 ```mermaid
 flowchart TD
-    subgraph Frontend [Frontend - Expo (React Native + TypeScript)]
+    subgraph Frontend["Frontend - Expo (React Native + TypeScript)"]
         UI[UI Components]
         SM[State Management]
         API[API Calls]
     end
 
-    subgraph Backend [Backend - Spring Boot]
+    subgraph Backend["Backend - Spring Boot"]
         AUTH[Auth Layer (JWT/OAuth2)]
         BL[Business Logic]
         REST[REST Controllers]
     end
 
-    subgraph Database [Database - PostgreSQL/MySQL]
+    subgraph Database["Database - PostgreSQL/MySQL"]
         Tables[(Users, Cooks, Meals, Orders, Locations)]
     end
 
