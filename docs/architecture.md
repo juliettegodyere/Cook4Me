@@ -44,7 +44,6 @@ This project follows a modular full-stack architecture with clear separation of 
 
 ## System Diagram
 
-```mermaid
 flowchart TD
     subgraph Frontend [Frontend - Expo (React Native + TypeScript)]
         UI[UI Components]
@@ -59,13 +58,14 @@ flowchart TD
     end
 
     subgraph Database [Database - PostgreSQL/MySQL]
-        Tables[(User, Tasks, Reminders, Courses)]
+        Tables[(Users, Cooks, Meals, Orders, Locations)]
     end
 
     UI --> API --> REST
     REST --> BL --> Tables
     AUTH --> REST
-```
+
+
 
 
 docs/architecture.md → this is where the High-Level App Structure (Expo frontend, Spring Boot backend, DB, etc.) with diagrams if possible.
