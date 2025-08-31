@@ -12,6 +12,7 @@ This project follows a modular full-stack architecture with clear separation of 
         - Booking meals or services.
         - Managing user accounts and preferences.
     - Uses EAS Build for production deployment.
+    - Integrates with push notifications to alert users of updates or booking reminders.
 
 ### 2. Backend (Spring Boot)
     - REST API built with Spring Boot.
@@ -22,6 +23,7 @@ This project follows a modular full-stack architecture with clear separation of 
         - Booking & order management.
         - Ratings and reviews system.
     - Integrates with a relational database for persistence.
+    - Communicates with external services like maps APIs for geolocation and payment gateways for transactions.
 
 ### 3. Database
     - Relational database (e.g., PostgreSQL or MySQL).
@@ -36,11 +38,25 @@ This project follows a modular full-stack architecture with clear separation of 
     - Supports both form login and OAuth2 login (Google, Facebook).
     - Issues JWT tokens to authenticate API requests.
 
+### 5. External Services
+    - Maps / Geolocation API (Google Maps, OpenStreetMap) for locating nearby cooks.
+    - Payment Gateway (Stripe, PayPal) for secure transactions.
+    - Push Notifications (Expo Push, Firebase Cloud Messaging) to notify users about bookings, updates, or reminders.
 
-### 5. DevOps / Tooling
+### 6. DevOps / Tooling
     - GitHub for version control, CI/CD, and issue tracking.
     - Docker (optional) for consistent local environment setup.
     - Unit & integration testing across backend and frontend.
+    - Monitoring/logging tools can be integrated (e.g., Sentry, Grafana) for better observability.
+
+### 7. Data & Request Flow (Overview)
+    - User interacts with the mobile app (Expo).
+    - Frontend sends API requests to the backend (Spring Boot REST API).
+    - Backend validates requests, applies business logic, and queries the database.
+    - For location-based queries, the backend communicates with Maps API.
+    - ayments are processed via the Payment Gateway.
+    - Notifications are sent to users via the Push Notification Service.
+    - Backend returns responses to the frontend, which updates the UI.
 
 ## System Diagram
 
@@ -51,6 +67,7 @@ flowchart TB
         UI["UI Components"]
         SM["State Management"]
         API["API Calls to Backend"]
+        Cache["Local Storage / Cache (AsyncStorage, SQLite, Redux Persist)"]
     end
 
     %% Backend
@@ -92,6 +109,8 @@ flowchart TB
     BL --> PaymentAPI
     BL --> Push
     Push --> UI
+    UI --> Cache
+    SM --> Cache
 ```
 
 
